@@ -1,0 +1,52 @@
+%Appendixes do not have section numbers, but they are listed in the table 
+%of contents:
+\section*{Appendix A: OGG Glossary and Abbreviations}
+\label{appendixa}
+\addcontentsline{toc}{chapter}{Appendix A: OGG Glossary and Abbreviations}
+
+   \hspace{1cm}bos page: The inital page ( beginning of stream) of a logical bitstream 
+       which contains information to identify the codec type and other decoding-relevant infomation.
+
+   chaining (or sequential multiplexing): Concatenation of two or more
+      complete physical Ogg bitstreams.
+
+   eos page: The final page (end of stream) of a logical bitstream.
+
+   granule position: An increasing position number for a specific
+      logical bitstream stored in the page header.  Its meaning is
+      dependent on the codec for that logical bitstream and specified in
+      a specific media mapping.
+
+   grouping (or concurrent multiplexing): Interleaving of pages of
+      several logical bitstreams into one complete physical Ogg
+      bitstream under the restriction that all bos pages of all grouped
+      logical bitstreams MUST appear before any data pages.
+
+   lacing value: An entry in the segment table of a page header
+      representing the size of the related segment.
+
+   logical bitstream: A sequence of bits being the result of an encoded
+      media stream.
+
+   media mapping: A specific use of the Ogg encapsulation format
+      together with a specific (set of) codec(s).
+
+   (Ogg) packet: A subpart of a logical bitstream that is created by the
+      encoder for that bitstream and represents a meaningful entity for
+      the encoder, but only a sequence of bits to the Ogg encapsulation.
+
+   (Ogg) page: A physical bitstream consists of a sequence of Ogg pages
+      containing data of one logical bitstream only.  It usually
+      contains a group of contiguous segments of one packet only, but
+      sometimes packets are too large and need to be split over several
+      pages.
+
+   physical (Ogg) bitstream: The sequence of bits resulting from an Ogg
+      encapsulation of one or several logical bitstreams.  It consists
+      of a sequence of pages from the logical bitstreams with the
+      restriction that the pages of one logical bitstream MUST come in
+      their correct temporal order.
+
+   (Ogg) segment: The Ogg encapsulation process splits each packet into
+      chunks of 255 bytes plus a last fractional chunk of less than 255
+      bytes.  These chunks are called segments.
